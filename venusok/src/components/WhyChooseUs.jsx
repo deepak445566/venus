@@ -2,7 +2,7 @@ import React from 'react';
 
 const WhyChooseUs = () => {
   return (
-    <div className="bg-gray-50 py-16 px-6">
+    <div className="bg-gray-50 py-16 px-6 mt-40 lg:mt-5">
       <div className="max-w-6xl mx-auto">
         
         {/* Header Section */}

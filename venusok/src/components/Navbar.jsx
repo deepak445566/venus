@@ -1,56 +1,75 @@
-import { useState } from 'react';
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
+  const navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+const handleform=()=>{
+  navigate("/form")
+}
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
-    <nav className="h-[15vh] relative w-full px-6 md:px-16 lg:px-24 xl:px-32 flex items-center justify-between z-20  bg-black/40  ">
+    <nav className="h-[13vh] w-full px-6 md:px-16 lg:px-24 xl:px-32 flex items-center justify-between bg-white shadow-sm relative z-20">
       {/* Logo */}
-      <a href="https://prebuiltui.com" className="text-white big text-2xl">
-        <h1>Venus Geyser Service</h1>
-      </a>
-<div className="flex items-center gap-20">
-      {/* Desktop Navigation */}
-      <ul className="hidden md:flex items-center gap-10 text-white big text-xl font-medium">
-        <li>
-          <a className="hover:text-[#1447E6] transition-colors duration-200" href="#">
-            HOME
-          </a>
-        </li>
-        <li>
-          <a className="hover:text-[#1447E6] transition-colors duration-200" href="#">
-            ABOUT
-          </a>
-        </li>
-        <li>
-          <a className="hover:text-[#1447E6] transition-colors duration-200" href="#">
-        SERVICES
-          </a>
-        </li>
-        <li>
-          <a className="hover:text-[#1447E6] transition-colors duration-200" href="#">
-           BLOG
-          </a>
-        </li>
-        <li>
-          <a className="hover:text-[#1447E6] transition-colors duration-200" href="#">
-         CONTACT
-          </a>
-        </li>
-      </ul>
+      <Link to="/" className="text-black text-2xl font-semibold big">
+        Venus Geyser Service
+      </Link>
 
-      {/* Desktop Button */}
-      <button
-        type="button"
-        className="hidden md:inline-flex bg-[#1447E6] text-white text-md font-medium w-40 h-11 rounded-2xl mont items-center justify-center"
-      >
-        Get started
-      </button>
-</div>
+      <div className="flex items-center gap-20">
+        {/* Desktop Navigation */}
+        <ul className="hidden md:flex items-center gap-10 text-black text-xl font-medium big">
+          <li>
+            <Link
+              className="hover:text-[#1447E6] transition-colors duration-200"
+              to="/"
+            >
+              HOME
+            </Link>
+          </li>
+          <li>
+            <Link
+              className="hover:text-[#1447E6] transition-colors duration-200"
+              to="/about"
+            >
+              ABOUT
+            </Link>
+          </li>
+          <li>
+            <Link
+              className="hover:text-[#1447E6] transition-colors duration-200"
+              to="/services"
+            >
+              SERVICES
+            </Link>
+          </li>
+          <li>
+            <Link
+              className="hover:text-[#1447E6] transition-colors duration-200"
+              to="/blog"
+            >
+              BLOG
+            </Link>
+          </li>
+          <li>
+            <Link
+              className="hover:text-[#1447E6] transition-colors duration-200"
+              to="/contact"
+            >
+              CONTACT
+            </Link>
+          </li>
+        </ul>
+
+        {/* Desktop Button */}
+        <button onClick={handleform}
+          type="button"
+          className="hidden md:inline-flex bg-[#1447E6] text-white text-md font-medium w-40 h-11 rounded-2xl items-center justify-center hover:bg-[#0f3ccf] transition-all"
+        >
+          Get Quote
+        </button>
+      </div>
+
       {/* Mobile Menu Button */}
       <button
         aria-label="menu-btn"
@@ -58,41 +77,67 @@ const Navbar = () => {
         className="inline-block md:hidden active:scale-90 transition-transform"
         onClick={toggleMenu}
       >
-        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="#000">
-          <path d="M 3 7 A 1.0001 1.0001 0 1 0 3 9 L 27 9 A 1.0001 1.0001 0 1 0 27 7 L 3 7 z M 3 14 A 1.0001 1.0001 0 1 0 3 16 L 27 16 A 1.0001 1.0001 0 1 0 27 14 L 3 14 z M 3 21 A 1.0001 1.0001 0 1 0 3 23 L 27 23 A 1.0001 1.0001 0 1 0 27 21 L 3 21 z"></path>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="30"
+          height="30"
+          viewBox="0 0 30 30"
+          fill="black"
+        >
+          <path d="M3 7a1 1 0 100 2h24a1 1 0 100-2H3zm0 7a1 1 0 100 2h24a1 1 0 100-2H3zm0 7a1 1 0 100 2h24a1 1 0 100-2H3z" />
         </svg>
       </button>
 
       {/* Mobile Menu */}
-      <div className={`absolute top-[70px] left-0 w-full  p-6 md:hidden transition-all duration-300 ${isMenuOpen ? 'block' : 'hidden'}`}>
-        <ul className="flex flex-col space-y-4">
+      <div
+        className={`absolute top-[13vh] left-0 w-full bg-white p-6 md:hidden shadow-md transition-all duration-300 ${
+          isMenuOpen ? "block" : "hidden"
+        }`}
+      >
+        <ul className="flex flex-col space-y-4 text-black">
           <li>
-            <a href="#" className="text-sm hover:text-gray-500/80 transition-colors">
+            <Link
+              to="/"
+              className="text-base hover:text-[#1447E6] transition-colors"
+              onClick={() => setIsMenuOpen(false)}
+            >
               Home
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#" className="text-sm hover:text-gray-500/80 transition-colors">
+            <Link
+              to="/services"
+              className="text-base hover:text-[#1447E6] transition-colors"
+              onClick={() => setIsMenuOpen(false)}
+            >
               Services
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#" className="text-sm hover:text-gray-500/80 transition-colors">
-              Portfolio
-            </a>
+            <Link
+              to="/about"
+              className="text-base hover:text-[#1447E6] transition-colors"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              About
+            </Link>
           </li>
           <li>
-            <a href="#" className="text-sm hover:text-gray-500/80 transition-colors">
-              Pricing
-            </a>
+            <Link
+              to="/contact"
+              className="text-base hover:text-[#1447E6] transition-colors"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Contact
+            </Link>
           </li>
         </ul>
 
         <button
           type="button"
-          className=" text-gray-600 border border-gray-300 mt-6 text-sm hover:bg-gray-50 active:scale-95 transition-all w-40 h-11 rounded-full"
+          className="bg-[#1447E6] text-white mt-6 text-base hover:bg-[#0f3ccf] active:scale-95 transition-all w-full h-11 rounded-full"
         >
-          Get started
+          Get Started
         </button>
       </div>
     </nav>

@@ -1,5 +1,5 @@
 import React from "react";
-import { Phone, Star, BadgeCheck } from "lucide-react"; // icon library
+import { Phone, Star, BadgeCheck } from "lucide-react";
 
 const About = () => {
   const infoData = [
@@ -21,18 +21,23 @@ const About = () => {
   ];
 
   return (
-    <div className="w-full bg-white rounded-2xl flex flex-col md:flex-row justify-between items-center gap-8 md:gap-4 px-8 py-6 max-w-6xl mx-auto mt-3 ">
+    <div className="w-full bg-white rounded-2xl flex flex-col md:flex-row justify-between items-center gap-6 px-6 py-8 shadow-sm  mt-4">
       {infoData.map((item, index) => (
         <div
           key={index}
-          className="flex items-center gap-4 text-center md:text-left"
+          className="flex items-center gap-4 w-full md:w-auto justify-center md:justify-start"
         >
-          <div className="bg-blue-500 p-4 rounded-full flex items-center justify-center">
+          {/* Icon */}
+          <div className="bg-blue-500 p-4 rounded-full flex items-center justify-center shrink-0">
             {item.icon}
           </div>
-          <div>
-            <p className="text-gray-600 font-medium">{item.title}</p>
-            <p className="text-xl md:text-2xl font-bold text-[#001845]">
+
+          {/* Text */}
+          <div className="text-center md:text-left">
+            <p className="text-gray-600 font-medium text-sm md:text-base">
+              {item.title}
+            </p>
+            <p className="text-lg md:text-2xl font-bold text-[#001845]">
               {item.value}
             </p>
           </div>

@@ -7,20 +7,20 @@ const Aboutour = () => {
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4 big">ABOUT US</h2>
+          <h2 className="text-2xl lg:text-4xl font-bold text-gray-900 lg:mb-4 big">ABOUT US</h2>
          
         </div>
 
         {/* Main Content */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
           {/* Left Column - Text Content */}
-          <div className="space-y-6">
-            <h1 className="text-4xl font-bold text-gray-900 leading-tight big">
+          <div className="space-y-6 ">
+            <h1 className=" text-3xl  lg:text-4xl font-bold text-gray-900 leading-tight big">
               Your Trusted Partner for<br />
               <span className="text-blue-600">Geyser Repair in Kolkata</span>
             </h1>
             
-            <p className="text-lg text-gray-600 leading-relaxed pop">
+            <p className="text-md lg:text-lg text-gray-600 leading-relaxed pop">
               Venus Geyser Service has been serving Kolkata since 2010, providing reliable 
               geyser repair services. Our certified technicians are dedicated to delivering 
               quality workmanship and customer satisfaction.
@@ -36,7 +36,7 @@ const Aboutour = () => {
           </div>
 
           {/* Right Column - Placeholder for Image */}
-          <div className="bg-gray-200 rounded-xl h-80 flex items-center justify-center">
+          <div className="bg-gray-200 rounded-xl  lg:h-80 flex items-center justify-center">
          <img src='/images/main1.jpg'  className='rounded-2xl'/>
           </div>
         </div>
